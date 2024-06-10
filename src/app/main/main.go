@@ -1,17 +1,19 @@
 package main
 
 import (
-	"clocking-in/src/provider/excel"
-	"clocking-in/src/provider/setting"
-
-	"github.com/jericho-yu/filesystem/filesystem"
+	"clocking-in/src/provider"
+	"clocking-in/src/provider/excelProvider"
+	"clocking-in/src/provider/settingProvider"
 )
 
 func main() {
-	rootDir := filesystem.NewFileSystemByAbs(".").Join("../../..")
-	setting := setting.SingleSettingProvider(rootDir.Copy().Join("settings").GetDir())
+	provider.Setting = settingProvider.SingleSettingProvider(provider.RootDir.Copy().Join("settings").GetDir())
 
-	excel.ReadCheckingIn(rootDir.Copy().Join(setting.App.ClockIn.Filename).GetDir())
+	readCheckingInProv := excelProvider.ReadCheckingInProv.New(provider.RootDir.Copy().Join(provider.Setting.App.CheckingIn.Filename).GetDir())
+	clockInTimeData := readCheckingInProv.ReadClockInTime()
+	monthData := readCheckingInProv.ReadMonth()
 
-	// println(setting.App.ClockIn.Filename)
+	println(clockInTimeData, monthData)
+
+	excelProvider.AnalysisCheckingInProv.New(clockInTimeData, monthData).Analysis()
 }

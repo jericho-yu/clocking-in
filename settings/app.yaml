@@ -1,10 +1,73 @@
 # 月度打卡
-clock-in:
-  filename: ./考勤5月-智冶互联.xlsx
-  start-row: 3
-  
+checking-in:
+  filename: 考勤5月-智冶互联.xlsx
+  dates:
+    G: 4月26日
+    H: 4月27日
+    I: 4月28日
+    J: 4月29日
+    K: 4月30日
+    L: 5月1日
+    M: 5月2日
+    N: 5月3日
+    O: 5月4日
+    P: 5月5日
+    Q: 5月6日
+    R: 5月7日
+    S: 5月8日
+    T: 5月9日
+    U: 5月10日
+    V: 5月11日
+    W: 5月12日
+    X: 5月13日
+    Y: 5月14日
+    Z: 5月15日
+    AA: 5月16日
+    AB: 5月17日
+    AC: 5月18日
+    AD: 5月19日
+    AE: 5月20日
+    AF: 5月21日
+    AG: 5月22日
+    AH: 5月23日
+    AI: 5月24日
+    AJ: 5月25日
+  # 打卡时间相关配置
+  clock-in-time:
+    sheet-name: 打卡时间
+    start-row: 5
+    start-column: A
+    end-column: AJ
+    overtimes: 
+      - H
+      - L
+      - M
+      - N
+      - O
+      - P
+      - W
+      - AC
+      - AD
+      - AJ
+  # 月度汇总相关配置
+  month:
+    sheet-name: 月度汇总 (2)
+    start-row: 5
+    start-column: A
+    end-column: AS
+    overtimes:
+      - H
+      - L
+      - M
+      - N
+      - O
+      - P
+      - W
+      - AC
+      - AD
+      - AJ
   
 # 月度汇总
 collect: 
   filename: ./加班、调休统计表-2024-智冶互联.xlsx
-  start-row: 3
+  start-row: 5
