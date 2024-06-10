@@ -3,7 +3,7 @@ module clocking-in
 go 1.21.8
 
 require (
-	github.com/jericho-yu/filesystem v0.0.12
+	github.com/jericho-yu/filesystem v0.0.13
 	github.com/jericho-yu/outil v0.0.18
 	gopkg.in/yaml.v2 v2.4.0
 )

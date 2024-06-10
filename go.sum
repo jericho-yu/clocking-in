@@ -18,6 +18,8 @@ github.com/go-latex/latex v0.0.0-20210118124228-b3d85cf34e07/go.mod h1:CO1AlKB2C
 github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0/go.mod h1:E/TSTwGwJL78qG/PmXZO1EjYhfJinVAhrmmHX6Z8B9k=
 github.com/jericho-yu/filesystem v0.0.12 h1:/S6HrA4woL5yULAidh3vXIMg/Y1P21vVJRAhEjN7FGM=
 github.com/jericho-yu/filesystem v0.0.12/go.mod h1:WU5BfTX3vF6AxZR0eV26LiwHf13tP52Yl9OHnexscGE=
+github.com/jericho-yu/filesystem v0.0.13 h1:4R/c3TaY/obQOcsAjax/HyvYZzCofSWkeyuo6amGeqc=
+github.com/jericho-yu/filesystem v0.0.13/go.mod h1:WU5BfTX3vF6AxZR0eV26LiwHf13tP52Yl9OHnexscGE=
 github.com/jericho-yu/http-client v0.4.3 h1:IdbeWnQHS70MRjjjUJVTSUPZ2nyEtCjiDXLXWaW2I3k=
 github.com/jericho-yu/http-client v0.4.3/go.mod h1:HGpI3wYgrZi3Mbg+YwVELT/eVzrmqj1urZvyYowvt50=
 github.com/jericho-yu/outil v0.0.10 h1:uFa6x4Dbogxyb0ggMPvmzw9FxFDNFnwOtpDKXtj2h/Y=

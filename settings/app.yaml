@@ -38,6 +38,8 @@ checking-in:
     start-row: 5
     start-column: A
     end-column: AJ
+    day-3-overtimes:
+      - L
     overtimes: 
       - H
       - L
@@ -55,6 +57,8 @@ checking-in:
     start-row: 5
     start-column: A
     end-column: AS
+    day-3-overtimes:
+      - L
     overtimes:
       - H
       - L

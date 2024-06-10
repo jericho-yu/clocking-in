@@ -15,18 +15,20 @@ type AppSetting struct {
 		Filename    string            `yaml:"filename"` // Excel文件路径
 		Dates       map[string]string // 日期相关
 		ClockInTime struct {
-			StartRow    uint     `yaml:"start-row"`    // 数据起始行
-			StartColumn string   `yaml:"start-column"` // 起始列
-			EndColumn   string   `yaml:"end-column"`   // 终止列
-			SheetName   string   `yaml:"sheet-name"`   // 打卡时间sheet名称
-			Overtimes   []string `yaml:"overtimes"`    // 假期所在列
+			StartRow      uint     `yaml:"start-row"`       // 数据起始行
+			StartColumn   string   `yaml:"start-column"`    // 起始列
+			EndColumn     string   `yaml:"end-column"`      // 终止列
+			SheetName     string   `yaml:"sheet-name"`      // 打卡时间sheet名称
+			Day3overtimes []string `yaml:"day-3-overtimes"` // 三薪
+			Overtimes     []string `yaml:"overtimes"`       // 假期所在列
 		} `yaml:"clock-in-time"`
 		Month struct {
-			StartRow    uint64   `yaml:"start-row"`    // 数据起始行号
-			StartColumn string   `yaml:"start-column"` // 起始列
-			EndColumn   string   `yaml:"end-column"`   // 终止列
-			SheetName   string   `yaml:"sheet-name"`   // 月度汇总sheet名称
-			Overtimes   []string `yaml:"overtimes"`    // 假期所在列
+			StartRow      uint64   `yaml:"start-row"`       // 数据起始行号
+			StartColumn   string   `yaml:"start-column"`    // 起始列
+			EndColumn     string   `yaml:"end-column"`      // 终止列
+			SheetName     string   `yaml:"sheet-name"`      // 月度汇总sheet名称
+			Day3overtimes []string `yaml:"day-3-overtimes"` // 三薪
+			Overtimes     []string `yaml:"overtimes"`       // 假期所在列
 		} `yaml:"month"` // 月度汇总相关配置
 	} `yaml:"checking-in"`
 

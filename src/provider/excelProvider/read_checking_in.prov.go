@@ -35,7 +35,7 @@ func (r *ReadCheckingInProvider) ReadClockInTime() map[uint64]map[string]string 
 			OpenFile(r.filename).
 			SetOriginalRow(int(provider.Setting.App.CheckingIn.ClockInTime.StartRow)).
 			SetSheetName(provider.Setting.App.CheckingIn.ClockInTime.SheetName).
-			SetFinishedRow(20).
+			// SetFinishedRow(10).
 			SetTitle(title).
 			Read().
 			ToMap(""),
@@ -60,7 +60,7 @@ func (r *ReadCheckingInProvider) ReadMonth() map[uint64]map[string]string {
 			OpenFile(r.filename).
 			SetOriginalRow(int(provider.Setting.App.CheckingIn.Month.StartRow)).
 			SetSheetName(provider.Setting.App.CheckingIn.Month.SheetName).
-			SetFinishedRow(20).
+			// SetFinishedRow(10).
 			SetTitle(title).
 			Read().
 			ToMap(""),
