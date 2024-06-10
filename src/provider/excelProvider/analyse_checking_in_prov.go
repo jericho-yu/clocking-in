@@ -3,6 +3,7 @@ package excelProvider
 import (
 	"clocking-in/src/provider"
 	"encoding/json"
+	"fmt"
 	"github.com/jericho-yu/filesystem/filesystem"
 	"github.com/jericho-yu/outil/array"
 	"github.com/jericho-yu/outil/dict"
@@ -22,20 +23,20 @@ type (
 
 	// AnalysisResult 分析结果
 	AnalysisResult struct {
-		Name            string   `json:"姓名"`             // 姓名
-		NeedWrite       bool     `json:"-"`              // 是否需要记载
-		Overtimes       []string `json:"加班,omitempty"`   // 加班
+		Name            string   `json:"姓名"`               // 姓名
+		NeedWrite       bool     `json:"-"`                  // 是否需要记载
+		Overtimes       []string `json:"加班,omitempty"`     // 加班
 		OvertimesDays   uint64   `json:"加班次数,omitempty"` // 加班天数
 		WrongOvertimes  []string `json:"加班错误,omitempty"` // 加班错误
-		YearLeaves      []string `json:"年假,omitempty"`   // 年假
-		PersonalLeaves  []string `json:"事假,omitempty"`   // 事假
-		Holidays        []string `json:"调休,omitempty"`   // 调休
-		MaternityLaves  []string `json:"产假,omitempty"`   // 产假
-		MarriageLeave   []string `json:"婚假,omitempty"`   // 婚假
-		Miss            []string `json:"缺卡,omitempty"`   // 缺卡
-		Absenteeism     []string `json:"旷工,omitempty"`   // 旷工
-		LateTimes       []string `json:"迟到,omitempty"`   // 迟到
-		LeaveEarlyTimes []string `json:"早退,omitempty"`   // 早退
+		YearLeaves      []string `json:"年假,omitempty"`     // 年假
+		PersonalLeaves  []string `json:"事假,omitempty"`     // 事假
+		Holidays        []string `json:"调休,omitempty"`     // 调休
+		MaternityLaves  []string `json:"产假,omitempty"`     // 产假
+		MarriageLeave   []string `json:"婚假,omitempty"`     // 婚假
+		Miss            []string `json:"缺卡,omitempty"`     // 缺卡
+		Absenteeism     []string `json:"旷工,omitempty"`     // 旷工
+		LateTimes       []string `json:"迟到,omitempty"`     // 迟到
+		LeaveEarlyTimes []string `json:"早退,omitempty"`     // 早退
 	}
 )
 
@@ -176,7 +177,7 @@ func (r *AnalysisCheckingInProvider) analysisOvertime() {
 					} else if len(times) == 1 {
 						// 加班失败
 						result.NeedWrite = true
-						result.WrongOvertimes = append(result.WrongOvertimes, r.getDateName(columnText)+r.checkOvertime(times[0]))
+						result.WrongOvertimes = append(result.WrongOvertimes, r.getDateName(columnText)+fmt.Sprintf("加班缺卡(%s)", times[0]))
 					} else {
 						// 加班失败
 						result.NeedWrite = true
